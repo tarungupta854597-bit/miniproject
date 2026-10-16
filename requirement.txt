@@ -1,0 +1,37 @@
+# Meeting Assistant - requirements.txt
+
+# UI
+streamlit
+
+# Audio / YouTube
+yt-dlp
+openai-whisper
+
+# LangChain + Mistral
+langchain
+langchain-community
+langchain-core
+langchain-mistralai
+
+# RAG / Vector Database
+chromadb
+langchain-chroma
+
+# HuggingFace embeddings
+sentence-transformers
+transformers
+huggingface-hub
+
+# Document/file processing
+pypdf
+python-docx
+
+# PDF/TXT export and utilities
+reportlab
+
+# Environment variables
+python-dotenv
+
+# Data / numerical dependencies
+numpy
+pandas
