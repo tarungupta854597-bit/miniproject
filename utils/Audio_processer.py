@@ -23,4 +23,16 @@ def download_youtube_audio(url :str)->str:
     filename=ydl.prepare_filename(info).replace(".webm",".wav").replace(".m4a",".wav")
   return filename
 
-print(download_youtube_audio("https://www.youtube.com/watch?v=ZaKzw9tULeM"))
+data=download_youtube_audio("https://www.youtube.com/watch?v=c7NftBDC7aI")
+
+def convert_to_wav(input_path : str)->str:
+  output_path = os.path.splitext(input_path)[0]+"_converted.wav"
+  audio=AudioSegment.from_file(input_path)
+  audio=audio.set_channels(1).set_frame_rate(16000)
+  audio.export(output_path,format="wav")
+  return output_path
+
+print(convert_to_wav(data))
+
+def chunk_audio(wav_path: str,chunk_minutes:int =10)->list:
+  
